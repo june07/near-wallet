@@ -997,8 +997,8 @@
         "subHeader": "Selecione um método para proteger e recuperar a sua conta. Isso será usado para verificar atividades importantes, recuperar conta e acessar sua conta em outros dispositivos."
     },
     "setupSeedPhrase": {
-        "pageText": "Escreva as seguintes palavras EM ORDEM e guarde-as em algum lugar seguro. Você não consegue recuperar sua conta sem elas!",
-        "pageTitle": "Configurar Frase",
+        "pageText": "Write down the following words in order and keep them somewhere safe. <b>Anyone with access to it will also have access to your account!</b> You’ll be asked to verify your passphrase next.",
+        "pageTitle": "Setup Your Secure Passphrase",
         "snackbarCopyImplicitAddress": "Endereço do fundação Copiado!",
         "snackbarCopySuccess": "Frase-semente copiada!"
     },
