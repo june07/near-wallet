@@ -16,6 +16,8 @@ import * as accountActions from '../redux/actions/account';
 import { selectAccountSlice } from '../redux/slices/account';
 import { actions as tokenFiatValueActions } from '../redux/slices/tokenFiatValues';
 import { LoginWrapper } from '../routes/LoginWrapper';
+import { SetupPassphraseNewAccountWrapper } from '../routes/SetupPassphraseNewAccountWrapper';
+import { SetupRecoveryImplicitAccountWrapper } from '../routes/SetupRecoveryImplicitAccountWrapper';
 import translations_en from '../translations/en.global.json';
 import translations_pt from '../translations/pt.global.json';
 import translations_ru from '../translations/ru.global.json';
@@ -356,6 +358,18 @@ class Routing extends Component {
                                 exact
                                 path='/set-recovery/:accountId/:fundingContract?/:fundingKey?'
                                 component={SetupRecoveryMethodWithRouter}
+                            />
+                            <PublicRoute
+                                // For implicit, non-funded (no coin-op or linkdrop) accounts
+                                exact
+                                path='/set-recovery-implicit-account'
+                                component={SetupRecoveryImplicitAccountWrapper}
+                            />
+                            <PublicRoute
+                                // TODO: Add support for named account + funding options
+                                exact
+                                path='/setup-passphrase-new-account'
+                                component={SetupPassphraseNewAccountWrapper}
                             />
                             <PublicRoute
                                 exact
