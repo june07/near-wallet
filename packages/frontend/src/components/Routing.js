@@ -16,6 +16,7 @@ import * as accountActions from '../redux/actions/account';
 import { selectAccountSlice } from '../redux/slices/account';
 import { actions as tokenFiatValueActions } from '../redux/slices/tokenFiatValues';
 import { LoginWrapper } from '../routes/LoginWrapper';
+import { SetupLedgerNewAccountWrapper } from '../routes/SetupLedgerNewAccountWrapper';
 import { SetupPassphraseNewAccountWrapper } from '../routes/SetupPassphraseNewAccountWrapper';
 import { SetupRecoveryImplicitAccountWrapper } from '../routes/SetupRecoveryImplicitAccountWrapper';
 import translations_en from '../translations/en.global.json';
@@ -40,7 +41,7 @@ import AccessKeysWrapper from './access-keys/v2/AccessKeysWrapper';
 import { AutoImportWrapper } from './accounts/auto_import/AutoImportWrapper';
 import { ActivateAccountWithRouter } from './accounts/create/ActivateAccount';
 import { ExistingAccountWrapper } from './accounts/create/existing_account/ExistingAccountWrapper';
-import { ImplicitAccountWrapper } from './accounts/create/implicit_account/ImplicitAccountWrapper';
+import { CreateImplicitAccountWrapper } from './accounts/create/implicit_account/CreateImplicitAccountWrapper'; // Move to /routes dir
 import { InitialDepositWrapper } from './accounts/create/initial_deposit/InitialDepositWrapper';
 import { CreateAccountLanding } from './accounts/create/landing/CreateAccountLanding';
 import { VerifyAccountWrapper } from './accounts/create/verify_account/VerifyAccountWrapper';
@@ -378,6 +379,12 @@ class Routing extends Component {
                                 component={SetupPassphraseNewAccountWrapper}
                             />
                             <PublicRoute
+                                // TODO: Add support for named account + funding options
+                                exact
+                                path='/setup-ledger-new-account'
+                                component={SetupLedgerNewAccountWrapper}
+                            />
+                            <PublicRoute
                                 exact
                                 path='/setup-seed-phrase/:accountId/:step'
                                 component={SetupSeedPhraseWithRouter}
@@ -395,7 +402,7 @@ class Routing extends Component {
                             <PublicRoute
                                 exact
                                 path='/create-implicit-account'
-                                component={ImplicitAccountWrapper}
+                                component={CreateImplicitAccountWrapper}
                             />
                             <PublicRoute
                                 exact
